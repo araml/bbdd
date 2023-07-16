@@ -3,8 +3,8 @@
 ## 13/10/15
 
 
-1. [Qué es una transacción?](1#1.-¿qué-es-una-transacción%3F)
-2. [Qué es el problema de falsa  sumarización y cómo lo soluciona el locking binario?](1#2.-¿cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario%3F)
+1. [Qué es una transacción?](#1-qué-es-una-transacción)
+2. [Qué es el problema de falsa  sumarización y cómo lo soluciona el locking binario?](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
 3. Qué es la Consistencia Eventual?    
 4. Qué datos almacena el System  Catalog sobre las Foreign Keys?  
 5. Dar una restricción de integridad  referencial y mostrar cómo se la asegurar en el Modelo Relacional.  
@@ -112,244 +112,239 @@ De un ejemplo de una relción binaria. (1 punto)
 
 ## 06/08/13  
 80. Qué es el system log? Para qué se utiliza?  
-81. [Explicar detalladamente el problema de falsa actualización (como fue una traducción espantosa dio la posibilidad de elegir entre lost update o dirty read)](1#81.-explicar-detalladamente-el-problema-de-falsa-actualización-(como-fue-una-traducción-espantosa-dio-la-posibilidad-de-elegir-entre-lost-update-o-dirty-read))
+81. [Explicar detalladamente el problema de falsa actualización (como fue una traducción espantosa dio la posibilidad de elegir entre lost update o dirty read)](#81-explicar-detalladamente-el-problema-de-falsa-actualización-como-fue-una-traducción-espantosa-dio-la-posibilidad-de-elegir-entre-lost-update-o-dirty-read)
 82. Cuando un schedule es recuperable?  
-Enunciar las reglas adicionales de amstrong  
-Cuando se dice que una descomposición es sin pérdida de información? Dar un ejemplo de descomposición con pérdida  
-Definir la operación de proyección del álgebra relacional y dar 2 propiedades   
-Qué es DML? Dar un ejemplo de instrucción SQL de esta  categoría  
-Dar 2 reglas de Álgebra relacional que involucren al JOIN  que puedan usarse para optimización de consultas  
-Qué permisos pueden asignarse en una tabla?  
-El enunciado era muy largo pero esencialmente preguntaba sobre qué puede asegurarse si tenemos undo/redo, la base se cae y una transacción no hizo commit acerca de los datos en disco, si quedan los viejos, los nuevos, no puede asegurarse nada  
-Qué instrucciones DDL actualizan el system catalog?   
-Qué es clustering? Dar 2 ejemplos de uso donde pueda aplicarse  
-Dar 2 ventajas y desventajas en el uso de stored procedures
+83. Enunciar las reglas adicionales de amstrong  
+84. Cuando se dice que una descomposición es sin pérdida de información? Dar un ejemplo de descomposición con pérdida  
+85. Definir la operación de proyección del álgebra relacional y dar 2 propiedades   
+86. Qué es DML? Dar un ejemplo de instrucción SQL de esta  categoría  
+87. Dar 2 reglas de Álgebra relacional que involucren al JOIN  que puedan usarse para optimización de consultas  
+88. Qué permisos pueden asignarse en una tabla?  
+89. El enunciado era muy largo pero esencialmente preguntaba sobre qué puede asegurarse si tenemos undo/redo, la base se cae y una transacción no hizo commit acerca de los datos en disco, si quedan los viejos, los nuevos, no puede asegurarse nada  
+90. Qué instrucciones DDL actualizan el system catalog?   
+91. Qué es clustering? Dar 2 ejemplos de uso donde pueda aplicarse  
+92. Dar 2 ventajas y desventajas en el uso de stored procedures
 
 ## 30/07/13
 
-Defina detalladamente el problema de la falsa sumarizacion (2 puntos)   
-Defina equivalencia de dos transaccions (1? punto)
-Dada la siguiente relación {NROPEDIDO; CODART, NOMART,  CANTPEDIDA, PRECIO, CODEMP. NOMEMP., FECHA}. Indicar:   
-Una dependencia funcional completa     
-Una dependencia funcional parcial.     
-Una dependencia funcional transitiva.( 1.5 puntos)   
-  
-¿Que es un plan de ejecucion?(1)   
-Defina super clave y cual es la diferencia con la clave candidata(?)   
-De dos restricciones que modelen cosas del mundo real que haya en el modelo de entidad relacion y como se implementan en la base (2 puntos)  
-Defina lo que es un select en algebra relacional y de 2 propiedades (1? puntos) 
-Algo con GRANT (1 punto)
-¿Cómo se recupera la BD con undo/redo?(2 puntos) 
-Instruccion para actualizar el catalog(1 punto)
-2 operaciones que se realice(o haga, no me acuerdo bien la palabra) el DW ( algo asi era la pregunta, no me la acuerdo bien, yo  lo defini lo que era un DW y para que se usaba y me puso 0/2  puntos)(2 puntos)  
-¿Por qué el DBA tiene que conocer el crecimiento de la base?(1 punto)
+93. Defina detalladamente el problema de la falsa sumarizacion (2 puntos)   
+94. Defina equivalencia de dos transaccions (1? punto)
+95. Dada la siguiente relación {NROPEDIDO; CODART, NOMART,  CANTPEDIDA, PRECIO, CODEMP. NOMEMP., FECHA}. Indicar:   
+    1. Una dependencia funcional completa     
+    2. Una dependencia funcional parcial.     
+    3. Una dependencia funcional transitiva.( 1.5 puntos)   
+96. ¿Que es un plan de ejecucion?(1)   
+97. Defina super clave y cual es la diferencia con la clave candidata(?)   
+98. De dos restricciones que modelen cosas del mundo real que haya en el modelo de entidad relacion y como se implementan en la base (2 puntos)  
+99. Defina lo que es un select en algebra relacional y de 2 propiedades (1? puntos) 
+100. Algo con GRANT (1 punto)
+101. ¿Cómo se recupera la BD con undo/redo?(2 puntos) 
+102. Instruccion para actualizar el catalog(1 punto)
+103. 2 operaciones que se realice(o haga, no me acuerdo bien la palabra) el DW ( algo asi era la pregunta, no me la acuerdo bien, yo  lo defini lo que era un DW y para que se usaba y me puso 0/2  puntos)(2 puntos)  
+104. ¿Por qué el DBA tiene que conocer el crecimiento de la base?(1 punto)
 
 ## 11/04/12
 
-Defina la durabilidad de una transacción y de un ejemplo donde se aplique esta propiedad (1 punto)  
-Defina grafo de precedencia y enuncie el teorema de  serializabilidad. Por qué es importante este teorema en el control de concurrencia?(2.5 puntos)  
-Indique y explique dos diferencias entre el lockeo binario y  el shared-lock ( o lockeo ternario).(2 puntos)  
-Defina la clausura de un atributo. Escriba la definición de  clave candidata en función de la clausura.(1.5 puntos)  
-Dada la siguiente relación  {NROPEDIDO; CODART, NOMART, CANTPEDIDA, PRECIO, CODEMP. NOMEMP.,  FECHA}. Indicar: (1.5 puntos) 
-Una dependencia funcional  completa    
-Una dependencia funcional  parcial.      
-Una dependencia funcional transitiva.  Ej 17.
-Cuál es la diferencia entre una clave primaria y un índice único? (1 punto) 
-Indique los tres niveles que tiene la arquitectura de una base de datos. jemplifique (1.5 puntos).  
-Mencione dos reglas del álgebra relacional que toma en cuenta la optimización por reglas. Ejemplifique su uso (2 puntos)   
-De un ejemplo de cómo funciona el recovery en el caso de una caída abrupta de la base de datos por un corte de luz si la  misma utiliza redo logging? (2 puntos)
-Detalle el uso que el DBMS le da al system catalog en el momento de crear una tabla (1 punto) 
-¿Por qué es necesario para un DBA conocer la cantidad de  registros que inicialmente va a tener una tabla? (1 punto)    
-¿Cuándo una entidad se considera débil? De un ejemplo (1.5  puntos)  
+105. Defina la durabilidad de una transacción y de un ejemplo donde se aplique esta propiedad (1 punto)  
+106. Defina grafo de precedencia y enuncie el teorema de  serializabilidad. Por qué es importante este teorema en el control de concurrencia?(2.5 puntos)  
+107. Indique y explique dos diferencias entre el lockeo binario y  el shared-lock ( o lockeo ternario).(2 puntos)  
+108. Defina la clausura de un atributo. Escriba la definición de  clave candidata en función de la clausura.(1.5 puntos)  
+109. Dada la siguiente relación  {NROPEDIDO; CODART, NOMART, CANTPEDIDA, PRECIO, CODEMP. NOMEMP.,  FECHA}. Indicar: (1.5 puntos) 
+110. Una dependencia funcional  completa    
+111. Una dependencia funcional  parcial.      
+112. Una dependencia funcional transitiva.  Ej 17.
+113. Cuál es la diferencia entre una clave primaria y un índice único? (1 punto) 
+114. Indique los tres niveles que tiene la arquitectura de una base de datos. jemplifique (1.5 puntos).  
+115. Mencione dos reglas del álgebra relacional que toma en cuenta la optimización por reglas. Ejemplifique su uso (2 puntos)   
+116. De un ejemplo de cómo funciona el recovery en el caso de una caída abrupta de la base de datos por un corte de luz si la  misma utiliza redo logging? (2 puntos)
+117. Detalle el uso que el DBMS le da al system catalog en el momento de crear una tabla (1 punto) 
+118. ¿Por qué es necesario para un DBA conocer la cantidad de  registros que inicialmente va a tener una tabla? (1 punto)    
+119. ¿Cuándo una entidad se considera débil? De un ejemplo (1.5  puntos)  
   
-
-
 ## 13/12/19  
 
-Enunciar los métodos para resolver un JOIN y explicar uno  de ellos.  
-Mencione y explique dos diferencias entre OLTP y OLAP.  
-¿Cuáles son las 3 "Vs" de Big Data? Explicarlas brevemente.  
-¿Cuándo se dice que una transacción "lee" de  otra? ¿Cómo se relaciona con la recuperabilidad de los schedules?  
-¿Cuándo se utilizan las entidades débiles en un DER? Dar  un ejemplo.  
-Diferencia entre integración de datos e intercambio de  datos.  
-¿Cuál es la principal diferencia entre el DBA y el  administrador de datos? 
-¿Qué es el gobierno de datos? ¿Cómo se relaciona con la  calidad de datos?
-Explicar la UNDO rule. ¿Por qué es importante?  
-¿Qué optimizaciones puede hacer una base de datos paralela al recibir una query?  
-¿Cuándo se dice que una base de datos distribuida es  homogénea?    
-¿Cuál es la función del scheduler?  
-Mencione un nivel de aislamiento de SQL para transacciones.  ¿Qué implica? 
-¿Cuáles son los permisos que se le puede asignar a un  usuario sobre una tabla de la base de datos?   
-¿Qué es el teorema CAP?  
-¿Qué propiedades debe cumplir un conjunto de atributos  para ser una clave candidata?    
-¿Qué propiedades son deseables en una descomposición de  una relación?  
-¿Una relación que está en 2FN está también en 3FN?  Justificar.  
-Enunciar los axiomas de Armstrong.
-
+120. Enunciar los métodos para resolver un JOIN y explicar uno  de ellos.  
+121. Mencione y explique dos diferencias entre OLTP y OLAP.  
+122. ¿Cuáles son las 3 "Vs" de Big Data? Explicarlas brevemente.  
+123. ¿Cuándo se dice que una transacción "lee" de  otra? ¿Cómo se relaciona con la recuperabilidad de los schedules?  
+124. ¿Cuándo se utilizan las entidades débiles en un DER? Dar  un ejemplo.  
+125. Diferencia entre integración de datos e intercambio de  datos.  
+126. ¿Cuál es la principal diferencia entre el DBA y el  administrador de datos? 
+127. ¿Qué es el gobierno de datos? ¿Cómo se relaciona con la  calidad de datos?
+128. Explicar la UNDO rule. ¿Por qué es importante?  
+129. ¿Qué optimizaciones puede hacer una base de datos paralela al recibir una query?  
+130. ¿Cuándo se dice que una base de datos distribuida es  homogénea?    
+131. ¿Cuál es la función del scheduler?  
+132. Mencione un nivel de aislamiento de SQL para transacciones.  ¿Qué implica? 
+133. ¿Cuáles son los permisos que se le puede asignar a un  usuario sobre una tabla de la base de datos?   
+134. ¿Qué es el teorema CAP?  
+135. ¿Qué propiedades debe cumplir un conjunto de atributos  para ser una clave candidata?    
+136. ¿Qué propiedades son deseables en una descomposición de  una relación?  
+137. ¿Una relación que está en 2FN está también en 3FN?  Justificar.  
+138. Enunciar los axiomas de Armstrong.
 
 ## 17/07/19
 
-¿Cuándo una historia es completa?  
-¿Cuándo se dice que una transacción lee de otra? ¿Cómo  se relaciona esto con la recuperabilidad de los schedules?  
-Enunciar la Undo Rule y la Redo Rule.  
-Dar dos similitudes y dos diferencias entre las propiedades  de las transacciones en bases de datos relacionales y no-SQL.  
-Mostrar un ejemplo donde un chequeo de integridad podría  provocar el rollback de una transacción. ¿Cón qué propiedad de  las transacciones se relaciona?  
-Dar los dos modelos existentes de Open Data y describir  brevemente cada uno de ellos.  
-¿Puede una superclave no ser clave candidata? Justificar.  
-¿Puede la clausura de un conjunto de atributos ser el  conjunto vacío?  
-¿Cuándo se dice que una descomposición de una relación  es sin pérdida de información?  
-Mencionar dos heurísticas que puede aplicar el optimizador  de queries. 
-Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.    
-¿Cuándo se dice que una transacción es distribuida?  
-¿Qué tipos de paralelismo puede aplicar un motor de bases  de datos distribuidas al resolver una query?  
-¿Qué es un índice hash? Describir su estructura física.  
-¿Cuántas formas distintas existen de pasar un DER a un  modelo relacional?  
-¿Qué es un administrador de datos?  
-¿Cuál es la diferencia entre integración de datos e  intercambio de datos?
-¿Qué es una ontología?
+139. ¿Cuándo una historia es completa?  
+140. ¿Cuándo se dice que una transacción lee de otra? ¿Cómo  se relaciona esto con la recuperabilidad de los schedules?  
+141. Enunciar la Undo Rule y la Redo Rule.  
+142. Dar dos similitudes y dos diferencias entre las propiedades  de las transacciones en bases de datos relacionales y no-SQL.  
+143. Mostrar un ejemplo donde un chequeo de integridad podría  provocar el rollback de una transacción. ¿Cón qué propiedad de  las transacciones se relaciona?  
+144. Dar los dos modelos existentes de Open Data y describir  brevemente cada uno de ellos.  
+145. ¿Puede una superclave no ser clave candidata? Justificar.  
+146. ¿Puede la clausura de un conjunto de atributos ser el  conjunto vacío?  
+147. ¿Cuándo se dice que una descomposición de una relación  es sin pérdida de información?  
+148. Mencionar dos heurísticas que puede aplicar el optimizador  de queries. 
+149. Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.    
+150. ¿Cuándo se dice que una transacción es distribuida?  
+151. ¿Qué tipos de paralelismo puede aplicar un motor de bases  de datos distribuidas al resolver una query?  
+152. ¿Qué es un índice hash? Describir su estructura física.  
+153. ¿Cuántas formas distintas existen de pasar un DER a un  modelo relacional?  
+154. ¿Qué es un administrador de datos?  
+155. ¿Cuál es la diferencia entre integración de datos e  intercambio de datos?
+156. ¿Qué es una ontología?
 
 ## 12/18
 
-{idEmpleado, nombreEmpleado, nroDepto, costoDepto}  ¿Dependencias fucionales? ¿En que FN está?    
-CK vs SK    
-2NF vs 3NF    
-2 atributos => 3NF    
-Explicar una db no-sql y ejemplificar.    
-¿Qué es una BD distribuída? Enumerar condiciones que debe  cumplir.
-Fragmentación horizontal. ¿Qué es? Armar la tabla usando  AR.  
-Historia serial vs serializable    
-Comparar índice denso vs no denso en términos de  almacenamiento físico. 
-Explicar Ehrenfeucht–Fraïssé    
-Nombre 2 propiedades de AR que sean usadas para optimización  
-Que garantiza la independencia física?  
+157. {idEmpleado, nombreEmpleado, nroDepto, costoDepto}  ¿Dependencias fucionales? ¿En que FN está?    
+158. CK vs SK    
+159. 2NF vs 3NF    
+160. 2 atributos => 3NF    
+161. Explicar una db no-sql y ejemplificar.    
+162. ¿Qué es una BD distribuída? Enumerar condiciones que debe  cumplir.
+163. Fragmentación horizontal. ¿Qué es? Armar la tabla usando  AR.  
+164. Historia serial vs serializable    
+165. Comparar índice denso vs no denso en términos de  almacenamiento físico. 
+166. Explicar Ehrenfeucht–Fraïssé    
+167. Nombre 2 propiedades de AR que sean usadas para optimización  
+168. Que garantiza la independencia física?  
 
 ## 06/12/18
 
-Dos heurísticas de optimización y ejemplos
-Data Warehouse vs bases relacionales, diferencias
-Una query dónde no se pueda usar INLJ (no se pueda usar el join que usa índices, sin importar que estructuras tengas)
-Diferencias entre Select de SQL y selección de álgebra relacional
-Dame un ejemplo de una agregación
-Una historia donde se produzca un abort, pero que se evite si se usa control multiversion
-Dar dos tipos de control de concurrencia y compararlos (ventajas y desventajas)
-Para que sirve el grafo de seriabililidad y como se construye.
-¿Qué es un algoritmo de clustering?
-¿Qué es un administrador de datos?
-Diferencia entre 3FN y BCNF
-Diferencia entre consistencia en relacionales y NoSQL
-¿Qué es el Quantifier Rank?
-¿Qué es Open Data? Dar los dos tipos de ... [no sé qué]
-Diferencias entre optimización de querys en bases de datos paralelas y distribuidas
-Dar un ejemplo de uso de extensiones orientadas a objetos que proveen las bases de datos (tipos de datos custom objetosos)
-¿Que es una superclave?
-Te daba una relación y tenías que dar una clave (superclave) que no sea clave candidata
+169. Dos heurísticas de optimización y ejemplos
+170. Data Warehouse vs bases relacionales, diferencias
+171. Una query dónde no se pueda usar INLJ (no se pueda usar el join que usa índices, sin importar que estructuras tengas)
+172. Diferencias entre Select de SQL y selección de álgebra relacional
+173. Dame un ejemplo de una agregación
+174. Una historia donde se produzca un abort, pero que se evite si se usa control multiversion
+175. Dar dos tipos de control de concurrencia y compararlos (ventajas y desventajas)
+176. Para que sirve el grafo de seriabililidad y como se construye.
+177. ¿Qué es un algoritmo de clustering?
+178. ¿Qué es un administrador de datos?
+179. Diferencia entre 3FN y BCNF
+180. Diferencia entre consistencia en relacionales y NoSQL
+181. ¿Qué es el Quantifier Rank?
+182. ¿Qué es Open Data? Dar los dos tipos de ... [no sé qué]
+183. Diferencias entre optimización de querys en bases de datos paralelas y distribuidas
+184. Dar un ejemplo de uso de extensiones orientadas a objetos que proveen las bases de datos (tipos de datos custom objetosos)
+185. ¿Que es una superclave?
+186. Te daba una relación y tenías que dar una clave (superclave) que no sea clave candidata
 
 ## 01/08/17
 
-Definir clausura con dependencias funcionales. Dar el algoritmo para calcular la clausura
- Decir en qué caso CRT no es igual al álgebra relacional.
-Decir qué son las propiedades BASE.
- Qué es Data Mining y para qué se usa.
- ¿Qué son las bases distribuidas de sitio primario? Dar ventajas y desventajas.
- ¿Que es una agregación? Dar un ejemplo.
- Definir la fórmula de búsqueda en rango para B+ clustered.
- Si tengo una relación con 2 atributos, ¿puede pasar que no esté en 3FN? Justificar.
- ¿Qué es base de datos Stream? Dar un ejemplo.
- ¿Qué usa Ehrenfreucht-Fraissé para explicar el poder de expresividad de la lógica de 1er orden?
- Definir el problema de lost update y dar un ejemplo.
- ¿Qué son las réplicas 2P2 en bases de datos distribuídas? Dar ventajas y desventajas.
+187. Definir clausura con dependencias funcionales. Dar el algoritmo para calcular la clausura
+188.  Decir en qué caso CRT no es igual al álgebra relacional.
+189. Decir qué son las propiedades BASE.
+190.  Qué es Data Mining y para qué se usa.
+191.  ¿Qué son las bases distribuidas de sitio primario? Dar ventajas y desventajas.
+192.  ¿Que es una agregación? Dar un ejemplo.
+193.  Definir la fórmula de búsqueda en rango para B+ clustered.
+194.  Si tengo una relación con 2 atributos, ¿puede pasar que no esté en 3FN? Justificar.
+195.  ¿Qué es base de datos Stream? Dar un ejemplo.
+196.  ¿Qué usa Ehrenfreucht-Fraissé para explicar el poder de expresividad de la lógica de 1er orden?
+197.  Definir el problema de lost update y dar un ejemplo.
+198.  ¿Qué son las réplicas 2P2 en bases de datos distribuídas? Dar ventajas y desventajas.
 
 ## 15/05/17
  
- Describir la fórmula de la cantidad resultante de tuplas en la búsqueda por rango.
- Describir qué ocurre al realizarse un read con un sistema de control de concurrencia por timestamp y por multi-versión.
- Existe una relación de inclusión entre clave primaria, clave candidata y superclave? Justifique.
- Cuándo se puede decir que una BD distribuida es homogénea?
- Dada la siguiente relación {númeroEmpleado, nombreEmpleado, númeroDepartamento, costoDepartamento}, qué dependencias funcionales son válidas? Decir en qué forma normal se encuentra la relación.
- Mencionar dos mecanismos de limpieza de datos.
- Cómo serían las historias que un mecanismo de control de concurrencia entregaría si se quisiera cumplir estrictamente con la condición de aislamiento?
- Cuál es la diferencia entre agregación e interrelación ternaria? Justifique.
- Describa brevemente las bases de datos orientadas a grafos.
- Dar una heurística de optimización y las propiedades algebraicas que se utilizan para aplicarla.
- Qué diferencia existe entre una historia serial y una serializable? Ejemplifique.
-Que garantiza la independencia física de las bases de datos?
-Cuál es la diferencia respecto a almacenamiento físico entre un índice denso y uno no denso?
+199. Describir la fórmula de la cantidad resultante de tuplas en la búsqueda por rango.
+200. Describir qué ocurre al realizarse un read con un sistema de control de concurrencia por timestamp y por multi-versión.
+201. Existe una relación de inclusión entre clave primaria, clave candidata y superclave? Justifique.
+202. Cuándo se puede decir que una BD distribuida es homogénea?
+203. Dada la siguiente relación {númeroEmpleado, nombreEmpleado, númeroDepartamento, costoDepartamento}, qué dependencias funcionales son válidas? Decir en qué forma normal se encuentra la relación.
+204. Mencionar dos mecanismos de limpieza de datos.
+205. Cómo serían las historias que un mecanismo de control de concurrencia entregaría si se quisiera cumplir estrictamente con la condición de aislamiento?
+206. Cuál es la diferencia entre agregación e interrelación ternaria? Justifique.
+207. Describa brevemente las bases de datos orientadas a grafos.
+208. Dar una heurística de optimización y las propiedades algebraicas que se utilizan para aplicarla.
+209. Qué diferencia existe entre una historia serial y una serializable? Ejemplifique.
+210. Que garantiza la independencia física de las bases de datos?
+211. Cuál es la diferencia respecto a almacenamiento físico entre un índice denso y uno no denso?
 
 ## 25/04/17
 
-Una clave candidata es siempre una superclave?
-Definir dependencia funcional.
-Dada R = {A, B, C, D}, A es clave primaria, y además se tiene A->C, B->D. En qué forma normal está R?
-Qué es un índice no denso? Ejemplifique.
-Explicar el concepto de fragmentación mixta.
-Explicar la fórmula que calcula el costo de encontrar un valor utilizando un índice non clustered?
-Cómo asegura el control de concurrencia por timestamping multiversión la recuperabilidad?
-Dar una historia ACA que no sea serial.
-Con qué propiedad de las transacciones está relacionada la necesidad de evitar rollbacks en cascada?
-Enunciar las leyes de Armstrong.
-Dar dos propiedades del álgebra relacional que se puedan utilizar en optimización de consultas. Ejemplifique.
-Qué es un DER? Para qué se utiliza?
-Dar una extensión del modelo relacional con objetos. Ejemplificar.
+212. Una clave candidata es siempre una superclave?
+213. Definir dependencia funcional.
+214. Dada R = {A, B, C, D}, A es clave primaria, y además se tiene A->C, B->D. En qué forma normal está R?
+215. Qué es un índice no denso? Ejemplifique.
+216. Explicar el concepto de fragmentación mixta.
+217. Explicar la fórmula que calcula el costo de encontrar un valor utilizando un índice non clustered?
+218. Cómo asegura el control de concurrencia por timestamping multiversión la recuperabilidad?
+218. Dar una historia ACA que no sea serial.
+220. Con qué propiedad de las transacciones está relacionada la necesidad de evitar rollbacks en cascada?
+221. Enunciar las leyes de Armstrong.
+222. Dar dos propiedades del álgebra relacional que se puedan utilizar en optimización de consultas. Ejemplifique.
+223. Qué es un DER? Para qué se utiliza?
+224. Dar una extensión del modelo relacional con objetos. Ejemplificar.
 
 ## 02/03/17
 
-Clave candidata en funcion de la clausura
-diferencia entre relacion e interrelacion
-ejercicio practico donde te daba la relacion y te pedia que des un ejemplo de una descomposion con perdida de informacion. Justificar
-Funcionamiento de un indice primaro (decia otra cosa, yo interprete eso, el otro que rindio interpreto indice denso).
-Que es un administrador de datos y dos diferencias con un DBA.
-Costo del indice hash.
-Que es un scheduler ACA y dar ejemplo
-Porque el DBA admite scheduler ACA?
-Bases NO-SQL porque se dicen "Schema-less"? Ejemplificar.
-Explicar bases de datos distribuidas homogeneas.
-Que pasos se realizan en multiversion cuando llega un read(x)
-2 heuristicas de optimizacion. Ejempliique.
-Cuando se dice que una transaccion lee de otra.
-Algoritmos no supervisados. Ejemplifique.
+225. Clave candidata en funcion de la clausura
+226. diferencia entre relacion e interrelacion
+227. ejercicio practico donde te daba la relacion y te pedia que des un ejemplo de una descomposion con perdida de informacion. Justificar
+228. Funcionamiento de un indice primaro (decia otra cosa, yo interprete eso, el otro que rindio interpreto indice denso).
+229. Que es un administrador de datos y dos diferencias con un DBA.
+230. Costo del indice hash.
+231. Que es un scheduler ACA y dar ejemplo
+232. Porque el DBA admite scheduler ACA?
+233. Bases NO-SQL porque se dicen "Schema-less"? Ejemplificar.
+234. Explicar bases de datos distribuidas homogeneas.
+235. Que pasos se realizan en multiversion cuando llega un read(x)
+236. 2 heuristicas de optimizacion. Ejempliique.
+237. Cuando se dice que una transaccion lee de otra.
+238. Algoritmos no supervisados. Ejemplifique.
 
 ## 24/02/17
 
-Definir clave candidata en términos de clausuras de dependencias funcionales
-Definir cubrimiento minimal
-Sea R=(A,B,C,D) AB es clave primaria, A -> C y B -> D son dependencias funcionales, en qué forma normal se encuentra? Justifique
-Que es un índice denso
-Cuál es el costo de acceder a un índice hash
-Defina historia serializable y dé un ejemplo de una que lo sea.
-Por qué es importante que una historia sea serializable?
-Defina consistencia eventual.
-En una base distribuida, que significa que sea homogénea?
-En un control de concurrencia multiversion, qué controles suceden cuando se ejecuta read(x)
-De al menos dos optimizaciones de querys
-Qué significa que una transacción lea de otra? Dé un ejemplo
-Defina qué es agregación
-Dé alguna extension de objetos en las bases relacionales, ejemplifique.
+239. Definir clave candidata en términos de clausuras de dependencias funcionales
+240. Definir cubrimiento minimal
+241. Sea R=(A,B,C,D) AB es clave primaria, A -> C y B -> D son dependencias funcionales, en qué forma normal se encuentra? Justifique
+242. Que es un índice denso
+243. Cuál es el costo de acceder a un índice hash
+244. Defina historia serializable y dé un ejemplo de una que lo sea.
+245. Por qué es importante que una historia sea serializable?
+246. Defina consistencia eventual.
+247. En una base distribuida, que significa que sea homogénea?
+248. En un control de concurrencia multiversion, qué controles suceden cuando se ejecuta read(x)
+249. De al menos dos optimizaciones de querys
+250. Qué significa que una transacción lea de otra? Dé un ejemplo
+251. Defina qué es agregación
+252. Dé alguna extension de objetos en las bases relacionales, ejemplifique.
 
 ## ?/12/16
 
-Diferencia entre FNBC y 3FN
-Sea R=(numEmpkeado, nombre Empleado, numDepto, nomDepto) hacer una descomposición que no sea SPI. Y justificar
-Diferencia entre índice primario y secundario
-Que es un índice no denso(hacer ejemplo)
-Explicar que es una long duration transaction
-Que es la consistencia eventual y la diferencia con la tradicional
-Dar dos capacidades de las bases de datos geográficas
-Explicar un ejemplo de un atributo identificatorio
-Que es un plan de ejecución
-Dos diferencias y dos similitudes entre lock binario y concurrencia de control multiversion
-Explicar project en álgebra relacional. Dar un ejemplo y una sentencia SQL
-Diferencia entre checkpoint quiescente y no quiescente
-Cuando dos operaciones son conflictivas
-Cuando un atributo no está en clausura de otro
+253. Diferencia entre FNBC y 3FN
+254. Sea R=(numEmpkeado, nombre Empleado, numDepto, nomDepto) hacer una descomposición que no sea SPI. Y justificar
+255. Diferencia entre índice primario y secundario
+256. Que es un índice no denso(hacer ejemplo)
+257. Explicar que es una long duration transaction
+258. Que es la consistencia eventual y la diferencia con la tradicional
+259. Dar dos capacidades de las bases de datos geográficas
+260. Explicar un ejemplo de un atributo identificatorio
+261. Que es un plan de ejecución
+262. Dos diferencias y dos similitudes entre lock binario y concurrencia de control multiversion
+263. Explicar project en álgebra relacional. Dar un ejemplo y una sentencia SQL
+264. Diferencia entre checkpoint quiescente y no quiescente
+265. Cuando dos operaciones son conflictivas
+266. Cuando un atributo no está en clausura de otro
 
 ## 2023-03-10
-Que es una agregación? Dar un ejemplo
-cuánto vale T', si busco A=a
-Que es una base de datos stream?
-que son los algoritmos supervisados y no supervisados
-Que es data mesh. Cuáles son sus 4 principios. Explicarlos.
-Que es Open data? Dar las dos definiciones ( aquí la idea era explicar cómo se hizo conocido en América latina y en Europa)
-
+267. Que es una agregación? Dar un ejemplo
+268. cuánto vale T', si busco A=a
+269. Que es una base de datos stream?
+270. que son los algoritmos supervisados y no supervisados
+271. Que es data mesh. Cuáles son sus 4 principios. Explicarlos.
+272. Que es Open data? Dar las dos definiciones ( aquí la idea era explicar cómo se hizo conocido en América latina y en Europa)
 
 # Respuestas
 

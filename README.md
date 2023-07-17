@@ -243,17 +243,17 @@ De un ejemplo de una relción binaria. (1 punto)
 ## 01/08/17
 
 187. Definir clausura con dependencias funcionales. Dar el algoritmo para calcular la clausura
-188.  Decir en qué caso CRT no es igual al álgebra relacional.
-189. Decir qué son las propiedades BASE.
-190.  Qué es Data Mining y para qué se usa.
-191.  ¿Qué son las bases distribuidas de sitio primario? Dar ventajas y desventajas.
-192.  ¿Que es una agregación? Dar un ejemplo.
-193.  Definir la fórmula de búsqueda en rango para B+ clustered.
-194.  Si tengo una relación con 2 atributos, ¿puede pasar que no esté en 3FN? Justificar.
-195.  ¿Qué es base de datos Stream? Dar un ejemplo.
-196.  ¿Qué usa Ehrenfreucht-Fraissé para explicar el poder de expresividad de la lógica de 1er orden?
-197.  Definir el problema de lost update y dar un ejemplo.
-198.  ¿Qué son las réplicas 2P2 en bases de datos distribuídas? Dar ventajas y desventajas.
+188. Decir en qué caso CRT no es igual al álgebra relacional.
+189. [Decir qué son las propiedades BASE.](#189-decir-qué-son-las-propiedades-base)
+190. Qué es Data Mining y para qué se usa.
+191. ¿Qué son las bases distribuidas de sitio primario? Dar ventajas y desventajas.
+192. ¿Que es una agregación? Dar un ejemplo.
+193. Definir la fórmula de búsqueda en rango para B+ clustered.
+194. Si tengo una relación con 2 atributos, ¿puede pasar que no esté en 3FN? Justificar.
+195. ¿Qué es base de datos Stream? Dar un ejemplo.
+196. ¿Qué usa Ehrenfreucht-Fraissé para explicar el poder de expresividad de la lógica de 1er orden?
+197. Definir el problema de lost update y dar un ejemplo.
+198. ¿Qué son las réplicas 2P2 en bases de datos distribuídas? Dar ventajas y desventajas.
 
 ## 15/05/17
  
@@ -395,4 +395,32 @@ Al final de esto tenemos que X = X + 2 y n X = X + 3, efectivamente perdimos el 
     r(x), t1(x = x + 1), w(x), r2(x), a1, // T2 hace algo con x	
 
 Nota: los dirty reads se arreglan con un schedule cascadeless (ACA)
+
+## 01/08/17
+
+## 189. Decir qué son las propiedades BASE.
+
+Recordemos que el teorema CAP nos decia que podíamos tener a lo sumo 2 de las 
+siguientes 3 propiedades: Consistencia (C), Alta disponibilidad (A) y Tolerancia 
+a las particiones (P). 
+
+De las bases de datos no-SQL además salen unas propiedades llamadas BASE que son:
+
+**B**asic **A**vailability: disponibilidad (en terminos del teorema CAP), se
+garantiza alta disponiblidad dejando de lado consistencia, fallas en algun nodo 
+no dejan no operacional a la base de datos, incluso devolviendo resultados 
+inconsistentes. 
+
+**S**oft state: la base de datos puede cambiar de estado incluso sin input, esto 
+se debe a que al ser altamente distribuida los cambios no son necesariamente 
+visibles atomicamente.
+
+**E**ventual consistency: relacionado al item anterior, la base de datos 
+eventualmente va a llegar a un estado consistente a medida que se 'actualizen' 
+los nodos.
+
+# Referencias
+
+1. [Historia CAP y término BASE](https://www.julianbrowne.com/article/brewers-cap-theorem/)
+
 

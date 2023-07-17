@@ -265,7 +265,7 @@ De un ejemplo de una relción binaria. (1 punto)
 204. Mencionar dos mecanismos de limpieza de datos.
 205. Cómo serían las historias que un mecanismo de control de concurrencia entregaría si se quisiera cumplir estrictamente con la condición de aislamiento?
 206. Cuál es la diferencia entre agregación e interrelación ternaria? Justifique.
-207. Describa brevemente las bases de datos orientadas a grafos.
+207. [Describa brevemente las bases de datos orientadas a grafos.](#207-describa-brevemente-las-bases-de-datos-orientadas-a-grafos)
 208. Dar una heurística de optimización y las propiedades algebraicas que se utilizan para aplicarla.
 209. Qué diferencia existe entre una historia serial y una serializable? Ejemplifique.
 210. Que garantiza la independencia física de las bases de datos?
@@ -297,7 +297,8 @@ De un ejemplo de una relción binaria. (1 punto)
 230. Costo del indice hash.
 231. Que es un scheduler ACA y dar ejemplo
 232. Porque el DBA admite scheduler ACA?
-233. Bases NO-SQL porque se dicen "Schema-less"? Ejemplificar.
+233. [Bases NO-SQL porque se dicen 'schemaless?
+     Ejemplificar.](#233-bases-no-sql-porque-se-dicen-schemaless-ejemplificar)
 234. Explicar bases de datos distribuidas homogeneas.
 235. Que pasos se realizan en multiversion cuando llega un read(x)
 236. 2 heuristicas de optimizacion. Ejempliique.
@@ -382,6 +383,7 @@ El locking binario lo soluciona porque T1 puede pedir locks sobre todos los item
 ## 06/03/14
 ## 26/12/13
 ## 06/08/13 
+
 ### 81. Explicar detalladamente el problema de falsa actualización (como fue una traducción espantosa dio la posibilidad de elegir entre lost update o dirty read) 
 
 **Lost update (falsa actualización):** Ocurre cuando tenemos dos writes concurrentes al mismo data item, básicamente dos transacciones leen el mismo data item lo modifican o no y lo vuelven a escribir, una pisando el update el otro. Por ejemplo considerar estas transacciones T1, T2 (nota escribo ti(..) para indicar que la transacción i está modificando el data item x pero este es el mismo entre las 2 o más transacciones): 
@@ -398,7 +400,7 @@ Nota: los dirty reads se arreglan con un schedule cascadeless (ACA)
 
 ## 01/08/17
 
-## 189. Decir qué son las propiedades BASE.
+### 189. Decir qué son las propiedades BASE.
 
 Recordemos que el teorema CAP nos decia que podíamos tener a lo sumo 2 de las 
 siguientes 3 propiedades: Consistencia (C), Alta disponibilidad (A) y Tolerancia 
@@ -411,13 +413,60 @@ garantiza alta disponiblidad dejando de lado consistencia, fallas en algun nodo
 no dejan no operacional a la base de datos, incluso devolviendo resultados 
 inconsistentes. 
 
-**S**oft state: la base de datos puede cambiar de estado incluso sin input, esto 
-se debe a que al ser altamente distribuida los cambios no son necesariamente 
-visibles atomicamente.
+**S**oft state: la base de datos puede cambiar de estado incluso sin input, se
+abandona el manejo de consistencia y este es responsabilidad del desarrollador.
+Esto viene de la siguiente propiedad, a medida que hagamos operaciones no
+necesariamete la bbdd esta en un estado final y nos puede dar resultados
+distintos.
 
 **E**ventual consistency: relacionado al item anterior, la base de datos 
-eventualmente va a llegar a un estado consistente a medida que se 'actualizen' 
-los nodos.
+eventualmente va a llegar a un estado consistente mientras no reciba nuevos 
+inputs. Esto significa que incluso puede ejecutar varias transacciones sin
+necesariamente haber llegado a un punto consistente después de cada una (cosa
+que ACID si lo hacía).
+
+
+Ver [Historia CAP y término BASE](#Referencias)
+
+## 15/05/17
+ 
+### 207. Describa brevemente las bases de datos orientadas a grafos.
+
+Una base de datos orientada a grafos como su nombre lo indica es una base de
+datos definida como nodos y ejes de un grafo donde los ejes son relaciones
+tipadas y además ambos (nodos y relaciones) pueden tener propiedades.
+
+A diferencia de las otras bbdd noSQL las bases de grafos **si** cumplen las 
+propiedades ACID.
+
+## 02/03/17
+
+### 233. Bases NO-SQL porque se dicen 'schemaless'? Ejemplificar.
+
+En una DB SQL tenemos que especificar el schema de la tabla, es decir que
+elementos y tipos pueden ser guardados en la misma y no podemos
+insertar/modificar o borrar algo que no cumpla esas reglas (sin contar por
+supuesto un alter o operación del estilo). En cambio las DB noSQL no tienen que 
+enforzar un esquema, en ese sentido son schemaless el schema en si pasa a ser un
+problema del desarrollador y no de la DB. 
+
+Por ejemplo podemos considerar una DB key-value en la cual con una key podemos
+acceder a un valor que puede ser cualquier cosa, por ejemplo videos, imagenes
+texto etc, sin necesariamente describirlo en un schema. Un ejemplo podría ser
+MongoDB (key-document) o Cassandra (key-value). En mongoDB se guardan cosas 
+JSON-style sin tener un schema fijo, por ejemplo podriamos guardar lo siguiente 
+
+    { 
+        name : “Joe”, age : 30, interests : ‘football’ 
+    }   
+    { 
+        name : “Kate”, age : 25 
+    }
+
+Y asi es fácil tambien expandirlo agregando campos a medida que sea necesario
+sin mantener una consistencia con el resto, en algún sentido es como un
+documento que podemos expandir dinámicamente.
+
 
 # Referencias
 

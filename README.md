@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 16/265
+Respondidas: 18/265
 
 ## Indice:
     
@@ -98,7 +98,7 @@ De un ejemplo de una relción binaria. (1 punto)
 64. Mencione y explique dos parametros que necesita conocer el DBA sobre una tabla a la hora de crearla. (1 punto)   
 65. ¿Cuales son los niveles de aislamiento de SQL? ¿Qué  problema de control de concurrencia resuelve cada uno? (2 puntos) 
 66. ¿Qué es una descomposicion de una relacion? ¿Cuando es la  misma sin pérdidas de dependencias funcionales? (2 puntos)   
-67. ¿Cual es el costo de acceder por igualdad en una consulta  si se tiene un indice B+ Clustered que aplica al criterio de  busqueda? Expliquelo. (2 puntos)
+67. [~~¿Cual es el costo de acceder por igualdad en una consulta  si se tiene un indice B+ Clustered que aplica al criterio de  busqueda? Expliquelo. (2 puntos)~~ Ver #193](#193-definir-la-fórmula-de-búsqueda-en-rango-para-b-clustered)
 
 ## 13/09/13
 
@@ -255,7 +255,7 @@ De un ejemplo de una relción binaria. (1 punto)
 190. Qué es Data Mining y para qué se usa.
 191. ¿Qué son las bases distribuidas de sitio primario? Dar ventajas y desventajas.
 192. ¿Que es una agregación? Dar un ejemplo.
-193. Definir la fórmula de búsqueda en rango para B+ clustered.
+193. [Definir la fórmula de búsqueda en rango para B+ clustered.](#193-definir-la-fórmula-de-búsqueda-en-rango-para-b-clustered)
 194. Si tengo una relación con 2 atributos, ¿puede pasar que no esté en 3FN? Justificar.
 195. ¿Qué es base de datos Stream? Dar un ejemplo.
 196. ¿Qué usa Ehrenfreucht-Fraissé para explicar el poder de expresividad de la lógica de 1er orden?
@@ -487,6 +487,13 @@ inputs. Esto significa que incluso puede ejecutar varias transacciones sin
 necesariamente haber llegado a un punto consistente después de cada una (cosa
 que ACID si lo hacía).
 
+## 193. Definir la fórmula de búsqueda en rango para B+ clustered.
+
+Recordemos que clustered significa que el índice mantiene el mismo orden que los
+archivos físicos. En este caso buscar cuesta 'X' bloques dónde X es la altura 
+del árbol (tenemos que ir hasta un nodo hoja para obtener el bloque de tuplas que
+queremos) y luego, dependiendo el tipo de búsqueda, si es clave candidata o no
+etc la cantidad de tuplas que hay matchean nuestra búsqueda.
 
 Ver [Historia CAP y término BASE](#Referencias)
 

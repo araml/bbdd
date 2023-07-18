@@ -1,7 +1,14 @@
 # Preguntas final de bbdd
 
-## 13/10/15
+Respondidas: 16/265
 
+## Indice:
+    
+    - [13/10/15](#131015)
+
+## Preguntas:
+
+## 13/10/15
 
 1. [Qué es una transacción?](#1-qué-es-una-transacción)
 2. [Qué es el problema de falsa  sumarización y cómo lo soluciona el locking binario?](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
@@ -214,7 +221,7 @@ De un ejemplo de una relción binaria. (1 punto)
 162. ¿Qué es una BD distribuída? Enumerar condiciones que debe  cumplir.
 163. Fragmentación horizontal. ¿Qué es? Armar la tabla usando  AR.  
 164. Historia serial vs serializable    
-165. Comparar índice denso vs no denso en términos de  almacenamiento físico. 
+165. [Comparar índice denso vs no denso en términos de  almacenamiento físico.](#165-comparar-índice-denso-vs-no-denso-en-términos-de--almacenamiento-físico)
 166. Explicar Ehrenfeucht–Fraïssé    
 167. Nombre 2 propiedades de AR que sean usadas para optimización  
 168. Que garantiza la independencia física?  
@@ -232,7 +239,7 @@ De un ejemplo de una relción binaria. (1 punto)
 177. ¿Qué es un algoritmo de clustering?
 178. ¿Qué es un administrador de datos?
 179. Diferencia entre 3FN y BCNF
-180. Diferencia entre consistencia en relacionales y NoSQL
+180. [Diferencia entre consistencia en relacionales y NoSQL](#180-diferencia-entre-consistencia-en-relacionales-y-nosql)
 181. ¿Qué es el Quantifier Rank?
 182. ¿Qué es Open Data? Dar los dos tipos de ... [no sé qué]
 183. Diferencias entre optimización de querys en bases de datos paralelas y distribuidas
@@ -276,7 +283,7 @@ De un ejemplo de una relción binaria. (1 punto)
 212. Una clave candidata es siempre una superclave?
 213. Definir dependencia funcional.
 214. Dada R = {A, B, C, D}, A es clave primaria, y además se tiene A->C, B->D. En qué forma normal está R?
-215. Qué es un índice no denso? Ejemplifique.
+215. [~~Qué es un índice no denso? Ejemplifique.~~ Ver #165](#165-comparar-índice-denso-vs-no-denso-en-términos-de--almacenamiento-físico)
 216. Explicar el concepto de fragmentación mixta.
 217. Explicar la fórmula que calcula el costo de encontrar un valor utilizando un índice non clustered?
 218. Cómo asegura el control de concurrencia por timestamping multiversión la recuperabilidad?
@@ -310,7 +317,7 @@ De un ejemplo de una relción binaria. (1 punto)
 239. Definir clave candidata en términos de clausuras de dependencias funcionales
 240. Definir cubrimiento minimal
 241. Sea R=(A,B,C,D) AB es clave primaria, A -> C y B -> D son dependencias funcionales, en qué forma normal se encuentra? Justifique
-242. Que es un índice denso
+242. [~~Que es un índice denso~~ Ver #165](#165-comparar-índice-denso-vs-no-denso-en-términos-de--almacenamiento-físico)
 243. Cuál es el costo de acceder a un índice hash
 244. Defina historia serializable y dé un ejemplo de una que lo sea.
 245. Por qué es importante que una historia sea serializable?
@@ -336,7 +343,7 @@ De un ejemplo de una relción binaria. (1 punto)
 262. Dos diferencias y dos similitudes entre lock binario y concurrencia de control multiversion
 263. Explicar project en álgebra relacional. Dar un ejemplo y una sentencia SQL
 264. Diferencia entre checkpoint quiescente y no quiescente
-265. Cuando dos operaciones son conflictivas
+265. [~~Cuando dos operaciones son conflictivas~~ Ver grafo de precedencia #106](#106-defina-grafo-de-precedencia-y-enuncie-el-teorema-de--serializabilidad-por-qué-es-importante-este-teorema-en-el-control-de-concurrencia)
 266. Cuando un atributo no está en clausura de otro
 
 ## 2023-03-10
@@ -432,6 +439,26 @@ individual. No necesariamente la respuesta tiene el write más reciente.
 
 ## 06/12/18
 
+## 12/18
+
+### 165. Comparar índice denso vs no denso en términos de  almacenamiento físico. 
+
+Un índice denso es aquel que tiene una entrada de índice por cada valor de clave 
+para el archivo de datos. En cambio uno no denso no necesariamente, esto sirve 
+para optimizar el espacio, por ejemplo si el índice es de una key ordenada 
+podemos guardar el primer valor y su bloque entonces es fácil comparar si otra 
+key que buscamos está entre dos de esos valores y a que bloque va sin 
+necesariamente guardar la llave en el índice. 
+
+## 06/12/18
+
+### 180. Diferencia entre consistencia en relacionales y NoSQL
+
+Esto es más sobre consistencia eventual 
+[ver propiedades BASE #189](#189-decir-qué-son-las-propiedades-base), en cambio 
+la consistencia en una base SQL esta dada por **Consistency preservation** (ACID) y
+esto nos decia que al ejecutarse una transacción y que esta finalizara 
+exitosamente se movia la base de un estado consistente a otro.
 
 ## 01/08/17
 

@@ -5,7 +5,7 @@
 
 1. [Qué es una transacción?](#1-qué-es-una-transacción)
 2. [Qué es el problema de falsa  sumarización y cómo lo soluciona el locking binario?](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
-3. Qué es la Consistencia Eventual?    
+3. [~~Qué es la Consistencia Eventual?~~ Ver propiedades BASE #189](#189-decir-qué-son-las-propiedades-base)
 4. Qué datos almacena el System  Catalog sobre las Foreign Keys?  
 5. Dar una restricción de integridad  referencial y mostrar cómo se la asegurar en el Modelo Relacional.  
 6. Dadas las transacciones T1 =  {R1(A),R1(B),W1(B),W1(A)}, T2 = {R1(A), W1(A)}. Dar un historial  serial y otro serializable (pero no serial) [Venía con trampa]    
@@ -26,7 +26,7 @@
 
 14. ¿Qué es el rollback de una transacción? (1 punto)    
 15. Dos diferencias y similitudes entre lockeo optimista y pesimista (2 puntos)  
-16. Qué es el problema de falsa sumarización (2 puntos)   
+16. [~~Qué es el problema de falsa sumarización (2 puntos)~~ Ver pregunta 2](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
 16. Demuestre que X define funcionalmente a Y si y sólo si Y  pertenece a la clausura de X (3 puntos)  
 17. {NROPEDIDO, CODART, NOMART, CANTPEDIDO, PRECIO, CODEMP,  NOMEMP, FECHA}. (1.5 puntos)    
     1. Dar una dependencia funcional total.    
@@ -45,8 +45,8 @@ De un ejemplo de una relción binaria. (1 punto)
 
 26. Defina la durabilidad de una transacción y dé un ejemplo  donde se aplique esta propiedad.  
 28. Dado el siguiente conjunto de operaciones T1 = {R1(A);R1(D);W1(A);W1(D)} T2={R2(A);W2(A)}. Indique el schedule  serial correspondiente yuno serializable (no serial).  
-28. Falsa sumarización. Como resuelve este problema el lockeo binario?   
-29. Suponga la siguiente relacion {CODEMP, TEL1, TEL2, TEL3}. En  qué forma normal se encuentra? Justifique   
+28. [~~Falsa sumarización. Como resuelve este problema el lockeo binario?~~ Ver pregunta 2](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
+29. Suponga la siguiente relacion {CODEMP, TEL1, TEL2, TEL3}. En  qué forma normal se encuentra? Justifique  
 29. Como puede probarse que una dep. funcional es falsa en un cierto conjunto de DFs? 
 30. Defina clave primaria. Que operaciones de DML controla esta restricción?   
 32. Defina independencia lógica y explique como se vincula con los niveles de arqutectura de las BDs.   
@@ -62,7 +62,7 @@ De un ejemplo de una relción binaria. (1 punto)
 
 39. T1 efectúa lectura sucia sobre un valor de T2. Luego se hace rollback de T2 y la Base de Datos fuerza rollback de T1. ¿Qué  propiedad de las transacciones se aplicó para forzar rollback de T1? (2 puntos)   
 40. T1: {R1(A),W1(A),R1(B),W1(B)} T2: {R2(A),W2(A)}. Dar H  serial y una serializable (Que no sea serial) (2 puntos)   
-41. Explique problema de actualización perdida. ¿Cómo resuelve este problema el lockeo binario? (2 puntos)   
+41. [~~Explique problema de actualización perdida. ¿Cómo resuelve este problema el lockeo binario? (2 puntos)~~ Ver #81](#81-explicar-detalladamente-el-problema-de-falsa-actualización-como-fue-una-traducción-espantosa-dio-la-posibilidad-de-elegir-entre-lost-update-o-dirty-read)
 42. ¿Cuándo dos conjuntos de dependencias funcionales son  equivalentes? (1 punto) 
 43. Sea la relación R: {codigoDepto,nroAmbiente,codigoBarrio,descripcionBarrio,largoAmbiente,anchoAmbiente}  Dar una dependencia funcional transitiva, una parcial, una total. Indicar cuál es la clave de la relación. (3 puntos)    
 44. Defina la operación de project de álgebra relacional. ¿Cómo se traduce en un SQL esta operación? (1.5 puntos)   
@@ -146,7 +146,7 @@ De un ejemplo de una relción binaria. (1 punto)
 ## 11/04/12
 
 105. Defina la durabilidad de una transacción y de un ejemplo donde se aplique esta propiedad (1 punto)  
-106. Defina grafo de precedencia y enuncie el teorema de  serializabilidad. Por qué es importante este teorema en el control de concurrencia?(2.5 puntos)  
+106. [Defina grafo de precedencia y enuncie el teorema de  serializabilidad. Por qué es importante este teorema en el control de concurrencia?(2.5 puntos)](#106-defina-grafo-de-precedencia-y-enuncie-el-teorema-de--serializabilidad-por-qué-es-importante-este-teorema-en-el-control-de-concurrencia)
 107. Indique y explique dos diferencias entre el lockeo binario y  el shared-lock ( o lockeo ternario).(2 puntos)  
 108. Defina la clausura de un atributo. Escriba la definición de  clave candidata en función de la clausura.(1.5 puntos)  
 109. Dada la siguiente relación  {NROPEDIDO; CODART, NOMART, CANTPEDIDA, PRECIO, CODEMP. NOMEMP.,  FECHA}. Indicar: (1.5 puntos) 
@@ -177,7 +177,7 @@ De un ejemplo de una relción binaria. (1 punto)
 131. ¿Cuál es la función del scheduler?  
 132. Mencione un nivel de aislamiento de SQL para transacciones.  ¿Qué implica? 
 133. ¿Cuáles son los permisos que se le puede asignar a un  usuario sobre una tabla de la base de datos?   
-134. ¿Qué es el teorema CAP?  
+134. [¿Qué es el teorema CAP?](#134-qué-es-el-teorema-cap)  
 135. ¿Qué propiedades debe cumplir un conjunto de atributos  para ser una clave candidata?    
 136. ¿Qué propiedades son deseables en una descomposición de  una relación?  
 137. ¿Una relación que está en 2FN está también en 3FN?  Justificar.  
@@ -196,7 +196,7 @@ De un ejemplo de una relción binaria. (1 punto)
 147. ¿Cuándo se dice que una descomposición de una relación  es sin pérdida de información?  
 148. Mencionar dos heurísticas que puede aplicar el optimizador  de queries. 
 149. Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.    
-150. ¿Cuándo se dice que una transacción es distribuida?  
+150. ¿Cuándo se dice que una transacción es distribuida?
 151. ¿Qué tipos de paralelismo puede aplicar un motor de bases  de datos distribuidas al resolver una query?  
 152. ¿Qué es un índice hash? Describir su estructura física.  
 153. ¿Cuántas formas distintas existen de pasar un DER a un  modelo relacional?  
@@ -228,7 +228,7 @@ De un ejemplo de una relción binaria. (1 punto)
 173. Dame un ejemplo de una agregación
 174. Una historia donde se produzca un abort, pero que se evite si se usa control multiversion
 175. Dar dos tipos de control de concurrencia y compararlos (ventajas y desventajas)
-176. Para que sirve el grafo de seriabililidad y como se construye.
+176. [~~Para que sirve el grafo de seriabililidad y como se construye.~~ Ver #106](#106-defina-grafo-de-precedencia-y-enuncie-el-teorema-de--serializabilidad-por-qué-es-importante-este-teorema-en-el-control-de-concurrencia)
 177. ¿Qué es un algoritmo de clustering?
 178. ¿Qué es un administrador de datos?
 179. Diferencia entre 3FN y BCNF
@@ -370,10 +370,6 @@ Esperaríamos que sum sea 100 pero en realidad es 200 porqué T2 leyó Y antes q
 
 El locking binario lo soluciona porque T1 puede pedir locks sobre todos los items que tiene que updatear evitando que T2 se meta en el medio y lea valores en el medio de las modificaciones.
 
-### 3. Qué es la Consistencia Eventual?
-
-
-
 
 ## 04/08/14
 ### 13. ¿Qué es el rollback de una transacción? (1 punto) 
@@ -397,6 +393,45 @@ Al final de esto tenemos que X = X + 2 y n X = X + 3, efectivamente perdimos el 
     r(x), t1(x = x + 1), w(x), r2(x), a1, // T2 hace algo con x	
 
 Nota: los dirty reads se arreglan con un schedule cascadeless (ACA)
+
+## 11/04/12
+
+### 106. Defina grafo de precedencia y enuncie el teorema de  serializabilidad. Por qué es importante este teorema en el control de concurrencia?  
+
+Un grafo de precedencia (también llamado de seriabilidad) es un grafo que se 
+arma a partir de las operaciones de varias historias(transacciones) para saber 
+cuando hay conflictos.
+El teorema de seriabilidad nos dice que si el grafo resultante no tiene ciclos 
+la historia se puede serializar (es decir hay una historia serial equivalente).
+
+Para armarlo se hace lo siguiente: 
+
+1. Definir un nodo por cada transaccion 
+2. Un arco entre nodos si tienen una operación en conflicto (el arco va del nodo
+   cuya operación ocurre antes hacía el otro).
+
+Recordar que los conflictos eran si dado un item ocurría uno atras del otro un
+write/read, read/write o write/write entre dos transacciones.
+
+
+## 13/12/19  
+
+### 134. ¿Qué es el teorema CAP?  
+
+El teorema CAP nos dice que de las siguientes tres propiedades solo podemos
+tener dos:
+
+1. **Consistency:** Todos los nodos del sistema ven exactamente los mismos valores de los datos en
+el mismo momento. 
+
+2. **Availability:** El sistema no puede dejar de estar funcional. Cada interacción con el sistema
+devuelve una respuesta (sin errores) independientemente del estado de cada nodo
+individual. No necesariamente la respuesta tiene el write más reciente. 
+
+3. **Partitioning tolerance:** El sistema no falla si se cae un nodo, se pierden y o retrasan los mensajes.
+
+## 06/12/18
+
 
 ## 01/08/17
 

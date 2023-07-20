@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 18/265
+Respondidas: 23/265
 
 ## Indice:
     
@@ -55,9 +55,9 @@ De un ejemplo de una relción binaria. (1 punto)
 28. [~~Falsa sumarización. Como resuelve este problema el lockeo binario?~~ Ver pregunta 2](#2-cuál-es-el-problema-de-la-falsa-sumarización-y-cómo-lo-soluciona-el-locking-binario)
 29. Suponga la siguiente relacion {CODEMP, TEL1, TEL2, TEL3}. En  qué forma normal se encuentra? Justifique  
 29. Como puede probarse que una dep. funcional es falsa en un cierto conjunto de DFs? 
-30. Defina clave primaria. Que operaciones de DML controla esta restricción?   
+30. [Defina clave primaria. Que operaciones de DML controla esta restricción?](#30-defina-clave-primaria-que-operaciones-de-dml-controla-esta-restricción)
 32. Defina independencia lógica y explique como se vincula con los niveles de arqutectura de las BDs.   
-33. Cual es el costo de acceder a buscar un rango de valores si se tiene un indice hash que aplica al criterio de busqueda?  
+33. [Cual es el costo de acceder a buscar un rango de valores si se tiene un indice hash que aplica al criterio de busqueda?](#33-cual-es-el-costo-de-acceder-a-buscar-un-rango-de-valores-si-se-tiene-un-indice-hash-que-aplica-al-criterio-de-busqueda)
 34. Como pueden utilizarse las vistas para aumentar la seguridad de la BD?   
 35. Se tiene una BD con actualizacion inmediata (undo/redo).  Muestre un grafico en que situación tenia que estar T2 para que el  dbms tuviera que hacer undo 
 36. Dos usos que le da el compilador al System Catalog.   
@@ -72,7 +72,7 @@ De un ejemplo de una relción binaria. (1 punto)
 41. [~~Explique problema de actualización perdida. ¿Cómo resuelve este problema el lockeo binario? (2 puntos)~~ Ver #81](#81-explicar-detalladamente-el-problema-de-falsa-actualización-como-fue-una-traducción-espantosa-dio-la-posibilidad-de-elegir-entre-lost-update-o-dirty-read)
 42. ¿Cuándo dos conjuntos de dependencias funcionales son  equivalentes? (1 punto) 
 43. Sea la relación R: {codigoDepto,nroAmbiente,codigoBarrio,descripcionBarrio,largoAmbiente,anchoAmbiente}  Dar una dependencia funcional transitiva, una parcial, una total. Indicar cuál es la clave de la relación. (3 puntos)    
-44. Defina la operación de project de álgebra relacional. ¿Cómo se traduce en un SQL esta operación? (1.5 puntos)   
+44. [Defina la operación de project de álgebra relacional. ¿Cómo se traduce en un SQL esta operación? (1.5 puntos)](#44-defina-la-operación-de-project-de-álgebra-relacional-cómo-se-traduce-en-un-sql-esta-operación-15-puntos)
 45. Mencione dos componentes del DBMS y explique su funcionamiento. (2 puntos)  
 46. Mencione y ejemplifique dos heurísticas que utiliza el optimizador de consultas. (2 puntos)   
 47. Mencione dos permisos existentes sobre los usuarios de una Base de Datos. (1 punto)    
@@ -89,7 +89,7 @@ De un ejemplo de una relción binaria. (1 punto)
 55. Definicion de dependencia funcional parcial. De un ejemplo. (1 punto)   
 56. Definir clave foranea. ¿Qué operaciones de SQL controlan esta restriccion? (2 puntos)   
 57. ¿Cual es la diferencia entre una agregación y una relacion ternaria? (2 puntos)   
-58. ¿Cuando un indice se llama secundario? (1 punto)   
+58. [¿Cuando un indice se llama secundario? (1 punto)](#58-cuando-un-indice-se-llama-secundario-1-punto)
 59. ¿Como pueden utilizarse los stored procedures para aumentar  la seguridad de una base de datos? ¿Por que? (2 puntos)   
 60. ¿Cual es la diferencia entre Commit y Checkpoint? (1.5 puntos)   
 61. Detalle el uso que le da el DBMS al System Catalog en el  momento de hacer un insert en una tabla. (2 puntos)   
@@ -333,7 +333,7 @@ De un ejemplo de una relción binaria. (1 punto)
 
 253. Diferencia entre FNBC y 3FN
 254. Sea R=(numEmpkeado, nombre Empleado, numDepto, nomDepto) hacer una descomposición que no sea SPI. Y justificar
-255. Diferencia entre índice primario y secundario
+255. [~~Diferencia entre índice primario y secundario~~ Ver Q58](#58-cuando-un-indice-se-llama-secundario-1-punto)
 256. Que es un índice no denso(hacer ejemplo)
 257. Explicar que es una long duration transaction
 258. Que es la consistencia eventual y la diferencia con la tradicional
@@ -383,8 +383,44 @@ El locking binario lo soluciona porque T1 puede pedir locks sobre todos los item
 
 
 ## 11/04/14
+
+### 30. Defina clave primaria. Que operaciones de DML controla esta restricción?   
+
+Dados los atributos de una entidad queremos poder identificar una instancia, de
+acá salen las **superclaves (SK)** que son el conjunto de atributos que identifican
+las identidades. A partir de las superclaves podemos obtener **claves
+candidatas (CK)** que son superclaves minimales y a partir de las CK podemos
+elegir una como el identificador de esta identidad, esta CK que elegimos va a
+ser la **clave primaria (PK)**.
+
+El **DML (data manipulation language)** es el lenguaje usado para
+modificar/insertar/borrar en el DBMS. (Osea `SELECT/INSERT/DELETE` etc).
+
+### 33. Cual es el costo de acceder a buscar un rango de valores si se tiene un indice hash que aplica al criterio de busqueda?  
+
+En principio podriamos pensar que es buscar cada item del rango con el índice
+hash y luego iterar sobre cada uno de los buckets resultantes, el tema es que el
+rango puede no estar acotado y como siempre consideramos el peor caso entonces
+sería mejor iterar sobre todos los archivos. Es decir el costo seria $\mathbf{B_r}$.
+
 ## 06/03/14
+
+### 44. Defina la operación de project de álgebra relacional. ¿Cómo se traduce en un SQL esta operación? (1.5 puntos)   
+
+**Project** nos devolvia un subconjunto de las columnas de la relación (sin
+considerar repetidos. Esto se traduce a un `SELECT DISTINCT` dónde se
+especifican las columnas del `SELECT` que queremos como los atributos del
+Project que queremos proyectar. 
+
+
 ## 26/12/13
+
+### 58. ¿Cuando un indice se llama secundario? (1 punto)   
+
+Un índice es primario cuando contiene todos los atributos/registros/columnas de
+los archivos. Si esto no es asi y por ejemplo es parcial o solo se tienen ids es
+un índice secundario.
+
 ## 06/08/13 
 
 ### 81. Explicar detalladamente el problema de falsa actualización (como fue una traducción espantosa dio la posibilidad de elegir entre lost update o dirty read) 

@@ -1,10 +1,30 @@
 # Preguntas final de bbdd
 
-Respondidas: 23/265
+Respondidas: 27/284
 
 ## Indice:
-    
-    - [13/10/15](#131015)
+1. Preguntas: 
+    * [13/10/15](#131015)
+    * [04/08/14](#040814)
+    * [11/04/14](#110414)
+    * [06/03/14](#060314)
+    * [26/12/13](#261213)
+    * [13/09/13](#130913)
+    * [06/08/13](#060813)
+    * [30/07/13](#300713)
+    * [11/04/12](#110412)
+    * [13/12/19](#131219)
+    * [17/07/19](#170719)
+    * [XX/12/18](#1218)
+    * [06/12/18](#061218)
+    * [01/08/17](#010817)
+    * [15/05/17](#150517)
+    * [25/04/17](#250417)
+    * [02/03/17](#020317)
+    * [24/02/17](#240217)
+    * [XX/12/16](#1216)
+    * [2023-03-10](#2023-03-10)
+    * [2023-07-20](#2023-07-20)
 
 ## Preguntas:
 
@@ -202,7 +222,7 @@ De un ejemplo de una relción binaria. (1 punto)
 146. ¿Puede la clausura de un conjunto de atributos ser el  conjunto vacío?  
 147. ¿Cuándo se dice que una descomposición de una relación  es sin pérdida de información?  
 148. Mencionar dos heurísticas que puede aplicar el optimizador  de queries. 
-149. Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.    
+149. [Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.](#149-dar-los-dos-modelos-más-comunes-para-una-base-de-datos-de--tipo-data-warehouse-describirlos-brevemente)
 150. ¿Cuándo se dice que una transacción es distribuida?
 151. ¿Qué tipos de paralelismo puede aplicar un motor de bases  de datos distribuidas al resolver una query?  
 152. ¿Qué es un índice hash? Describir su estructura física.  
@@ -354,6 +374,21 @@ De un ejemplo de una relción binaria. (1 punto)
 271. Que es data mesh. Cuáles son sus 4 principios. Explicarlos.
 272. Que es Open data? Dar las dos definiciones ( aquí la idea era explicar cómo se hizo conocido en América latina y en Europa)
 
+## 2023-07-20
+
+273. [Qué componente del DBMS se encarga de garantizar aislamiento.](#273-qué-componente-del-dbms-se-encarga-de-garantizar-aislamiento)
+2. [En un bd de biblioteca, dar una relacion 1-n y una relacion n-m.](#274-en-un-bd-de-biblioteca-dar-una-relacion-1-n-y-una-relacion-n-m)
+3. Que funcionamiento tiene el log? Explicar la politica de undo-redo.
+4. Que es gobierno de datos y como se relaciona con calidad de datos.
+5. [Que es falsa sumarizacion y como lo resuelve la tecnica de multiversion.](#277-que-es-falsa-sumarizacion-y-como-lo-resuelve-la-tecnica-de-multiversion)
+6. Que es un arbol de clasificacion y ejemplifique.
+7. [Qué es el teorema cap y como se vincula con las propiedades ACID.](#279-qué-es-el-teorema-cap-y-como-se-vincula-con-las-propiedades-acid)
+8. Mencione dos aspectos salientes de las bases de datos orientadas a grafos.
+9. Qué es data mesh y sus caracteristicas principales.
+10. Qué es big data y sus caracteristicas principales.
+11. En que se diferencias los tipos de datos estructurados vs los semi-estructurados.
+12. Qué es fragmentacion y que tipos hay.
+
 # Respuestas
 
 ## 13/10/15
@@ -473,7 +508,25 @@ individual. No necesariamente la respuesta tiene el write más reciente.
 
 3. **Partitioning tolerance:** El sistema no falla si se cae un nodo, se pierden y o retrasan los mensajes.
 
-## 06/12/18
+## 17/07/19
+
+### 149. Dar los dos modelos más comunes para una base de datos de  tipo Data Warehouse. Describirlos brevemente.    
+
+Hay dos modelos para data warehouse dependiendo lo que querramos lograr 
+
+**Modelo E-R:** que recordemos tenia entidades, atributos y relaciones.
+**Modelo dimensional**: hechos, dimensiones y medidas.
+
+**Hecho:** conjunto de datsos centrales a mi problema.
+
+**Dimension:** Le da una característica a los hechos, cada hecho esta conectado
+a una dimensión y estas pueden formar una colección de hechos o una unidad.
+Determinan contexto de los hechos. Además pueden tener
+una jerarquia extra (Por ejemplo Tiempo: día, mes, año, etc y a su vez cada una
+de estas puede llegar a tener a su vez subdimensiones).
+
+**Medida**: Son literalmente parametros asignados a los hechos, por ejemplo el
+Tiempo, zona geográfica, si es un cliente o vendedor, etc. 
 
 ## 12/18
 
@@ -571,6 +624,36 @@ JSON-style sin tener un schema fijo, por ejemplo podriamos guardar lo siguiente
 Y asi es fácil tambien expandirlo agregando campos a medida que sea necesario
 sin mantener una consistencia con el resto, en algún sentido es como un
 documento que podemos expandir dinámicamente.
+
+
+## 2023-07-20
+
+## 273. Qué componente del DBMS se encarga de garantizar aislamiento.
+## 274. En un bd de biblioteca, dar una relacion 1-n y una relacion n-m.
+
+Se me ocurre que podrían ser libros prestados: (id libro, id persona), un
+ejemplar solo puede ir a una sola persona pero una persona puede sacar varios
+libros. Y para n-m podría ser (id autor, id libro), un autor puede tener muchos 
+libros y a su vez un libro puede tener más de un autor.
+
+## 277. Que es falsa sumarizacion y como lo resuelve la tecnica de multiversion.
+
+Falsa sumarización es cuando tenemos una transacción haciendo, literalmente, una
+sumarización de valores pero lee valores en el medio de otra transacción que
+estaba modificando varios de estos, entonces lee a su vez un valor viejo y un
+valor actualizado para hacer la sumarización.
+
+## 279. Qué es el teorema cap y como se vincula con las propiedades ACID.
+
+El teorema CAP ya fue explicado en la pregutna [#134](#134-qué-es-el-teorema-cap),
+
+Se vincula con A**C**ID en las reglas de consistencia aunque difieren, ACID
+garantiza que una vez terminada una transacción se movio la DB de un estado
+consistente a otro. CAP nos garantiza que todos nodos del sistema ven
+exactamente los mismos valores de los datos en cualquier momento, esto es una
+garantía más débil ya que al estar en un sistema particionado puede ser que la
+DB esté en un estado inconsistente (aunque no nos debería dejar leer), al cual
+eventualmente pasará a ser uno consistente.
 
 
 # Referencias

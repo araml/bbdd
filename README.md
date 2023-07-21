@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 27/284
+Respondidas: 29/284
 
 ## Indice:
 1. Preguntas: 
@@ -341,7 +341,7 @@ De un ejemplo de una relción binaria. (1 punto)
 243. Cuál es el costo de acceder a un índice hash
 244. Defina historia serializable y dé un ejemplo de una que lo sea.
 245. Por qué es importante que una historia sea serializable?
-246. Defina consistencia eventual.
+246. [~~Defina consistencia eventual.~~ Ver **E** de BASE](#189-decir-qué-son-las-propiedades-base)
 247. En una base distribuida, que significa que sea homogénea?
 248. En un control de concurrencia multiversion, qué controles suceden cuando se ejecuta read(x)
 249. De al menos dos optimizaciones de querys
@@ -356,7 +356,7 @@ De un ejemplo de una relción binaria. (1 punto)
 255. [~~Diferencia entre índice primario y secundario~~ Ver Q58](#58-cuando-un-indice-se-llama-secundario-1-punto)
 256. Que es un índice no denso(hacer ejemplo)
 257. Explicar que es una long duration transaction
-258. Que es la consistencia eventual y la diferencia con la tradicional
+258. [~~Que es la consistencia eventual y la diferencia con la tradicional~~ Ver #180](#180-diferencia-entre-consistencia-en-relacionales-y-nosql)
 259. Dar dos capacidades de las bases de datos geográficas
 260. Explicar un ejemplo de un atributo identificatorio
 261. Que es un plan de ejecución

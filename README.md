@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 36/284
+Respondidas: 37/284
 
 ## Indice:
 1. Preguntas: 
@@ -411,6 +411,10 @@ El problema de la **falsa sumarización** ocurre cuando hay una transacción mod
 Esperaríamos que sum sea 100 pero en realidad es 200 porqué T2 leyó Y antes que se le restara 100.
 
 El locking binario lo soluciona porque T1 puede pedir locks sobre todos los items que tiene que updatear evitando que T2 se meta en el medio y lea valores en el medio de las modificaciones.
+
+### 5. Dar una restricción de integridad  referencial y mostrar cómo se la asegurar en el Modelo Relacional.  
+
+Una restricción de integridad referencial se daba cuando teniamos que hacer cumplir que una FK  de nuestra relación actual esté presente en la tabla a la que se refiere (o que esté seteada como NULL). Por ejemplo podríamos considerar la relación prestamos (idPrestamo, idLibro, idUsuario) de una biblioteca, tanto idLibro como idUsuario son FKs y tienen que existir en las tablas de libros y usuarios como PKs. En este caso el modelo relacional la aseguraría aclarando esta existencia. 
 
 ### 7. Definir lo qué es el Data mining y dar dos utilidades.    
 

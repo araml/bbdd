@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 29/284
+Respondidas: 35/284
 
 ## Indice:
 1. Preguntas: 
@@ -412,10 +412,34 @@ Esperaríamos que sum sea 100 pero en realidad es 200 porqué T2 leyó Y antes q
 
 El locking binario lo soluciona porque T1 puede pedir locks sobre todos los items que tiene que updatear evitando que T2 se meta en el medio y lea valores en el medio de las modificaciones.
 
+### 7. Definir lo qué es el Data mining y dar dos utilidades.    
+
+Es la extracción de patrones o información interesante (no trivial, implícita, previamente desconocida y potencialmente útil) de grandes bases de datos.
+
+<TODO(2 utilidades)>
+
+### 13. Diferencia entre índice clustered y unclustered.
+
+Un índice clustered significa que el índice esta en el mismo orden físico que los archivos a los que se refiere. Mientras que unclustered no.
 
 ## 04/08/14
-### 13. ¿Qué es el rollback de una transacción? (1 punto) 
+### 14. ¿Qué es el rollback de una transacción? (1 punto) 
 
+Un rollback significa que dado un abort (cancelación) de una transacción todos los cambios que pueden haberse hecho por la misma tienen que ser deshechos (osea llevados al estado previo de la transacción).
+
+### 15. De dos diferencias y similitudes entre lock optimista y pesimista.
+
+**Diferencias**: El pesimista consiste en lockear cada dato que se va a acceder y por lo tanto puede llevar en mayor tiempo de blockeo entre transacción y también puede generar deadlocks.
+
+**Similitudes**: ni idea.
+
+### 23. ¿Qué es el clustering? De dos problemas a donde se aplique. 
+
+Es una forma de clasificar datos dónde no se sabe previamente las clases que existen. Consiste en agrupar en clases (que se van descubriendo) dónde se intenta maximizar la similitud dentro de la clase y minimizar la misma entre distintas clases. Estas clases tienen que ser encontradas por si solo (como dijimos no se sabe previamente cómo son).
+
+Dos ejemplos: PCA, dónde se puede usar para detección de patrones en imagenes (caras, text, etc), sin necesariamente saber lo que hay en las mismas.  
+
+<TODO(falta un ejemplo)>
 
 ## 11/04/14
 
@@ -446,6 +470,12 @@ sería mejor iterar sobre todos los archivos. Es decir el costo seria $\mathbf{B
 considerar repetidos. Esto se traduce a un `SELECT DISTINCT` dónde se
 especifican las columnas del `SELECT` que queremos como los atributos del
 Project que queremos proyectar. 
+
+### 45. Mencione dos componentes del DBMS y explique su funcionamiento. (2 puntos)
+
+**Recovery manager:** Es encargado de restaurar la base de datos en caso de haber una falla. Para esto hace uso de un log de archivos que lleva un registro de los cambios efectuados en la DB.
+
+**Optimizador de consultas:** Es encargado de armar un plan de ejecución eficiente en base a una consulta basándose en la información del system catalog (osea la estructura de la DB).
 
 
 ## 26/12/13

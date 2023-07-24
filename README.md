@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 35/284
+Respondidas: 36/284
 
 ## Indice:
 1. Preguntas: 
@@ -461,6 +461,10 @@ En principio podriamos pensar que es buscar cada item del rango con el índice
 hash y luego iterar sobre cada uno de los buckets resultantes, el tema es que el
 rango puede no estar acotado y como siempre consideramos el peor caso entonces
 sería mejor iterar sobre todos los archivos. Es decir el costo seria $\mathbf{B_r}$.
+
+### 37. Que es un Data Warehouse? Cual es su utilidad?   
+
+Son repositorios centrales de datos de fuentes dispersas y tiempos . Se utilizan para crear reportes analíticos sobre los mismos.
 
 ## 06/03/14
 

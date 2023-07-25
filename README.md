@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 41/284
+Respondidas: 43/284
 
 ## Indice:
 1. Preguntas: 
@@ -722,10 +722,13 @@ A diferencia de data warehouse y data lake donde todos los datos estaban central
 
 ### 282. Qué es big data y sus caracteristicas principales.
 
+Big data es un término que hace referencia a conjuntos de datos tan grandes y complejos que precisan aplicaciones informaticas no tradicionales de procesamiento de datos para tratarlos adecuadamente. Se enfoca en el conjunto de herramientas que permiten revelar información o comportamientos de estos datos. 
 
 
 ### 283. En que se diferencias los tipos de datos estructurados vs los semi-estructurados.
 ### 284. Qué es fragmentacion y que tipos hay.
+
+Fragmentación se refiere a como distribuir los datos de una BBDD en distintos nodos (servidores). Se tienen dos tipos de fragmentación, horizontal y vertical. En manera criolla la fragmentación vertical consiste en cortar (y dividir en varios nodos) las tabla através de sus columnas mientras que la horizontal (tambien llamada sharding) consiste en dividir las tablas sobre sus filas. 
 
 # Referencias
 

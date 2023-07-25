@@ -678,9 +678,10 @@ ejemplar solo puede ir a una sola persona pero una persona puede sacar varios
 libros. Y para n-m podría ser (id autor, id libro), un autor puede tener muchos 
 libros y a su vez un libro puede tener más de un autor.
 
-### 276. Que es gobierno de datos y como se relaciona con calidad de datos.
 
+### 275. Que funcionamiento tiene el log? Explicar la politica de undo-redo.
 
+### 276. Que es gobierno de datos y como se relaciona con calidad de datos
 
 ### 277. Que es falsa sumarizacion y como lo resuelve la tecnica de multiversion.
 
@@ -726,6 +727,11 @@ Big data es un término que hace referencia a conjuntos de datos tan grandes y c
 
 
 ### 283. En que se diferencias los tipos de datos estructurados vs los semi-estructurados.
+
+Los datos estructurados tienen, valga la redundancia, una estructura estricta, predefinida y fija generalmente en registros/tupls, en cambio los semi-estructurados no necesariamente, esto hace que pierdan un poco la organización y predictibilidad. Para los semi-estructurados la información sobre la estructura está mesclada con los datos. 
+
+Un ejemplo de semi-estructurado es un archivo json, donde podemos tener objetos similares pero no con la mismas caracteristicas, por ejemplo datos de una persona dónde alguno de los datos no esta presente.
+
 ### 284. Qué es fragmentacion y que tipos hay.
 
 Fragmentación se refiere a como distribuir los datos de una BBDD en distintos nodos (servidores). Se tienen dos tipos de fragmentación, horizontal y vertical. En manera criolla la fragmentación vertical consiste en cortar (y dividir en varios nodos) las tabla através de sus columnas mientras que la horizontal (tambien llamada sharding) consiste en dividir las tablas sobre sus filas. 

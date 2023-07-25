@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 43/284
+Respondidas: 44/284
 
 ## Indice:
 1. Preguntas: 
@@ -667,6 +667,24 @@ Y asi es fácil tambien expandirlo agregando campos a medida que sea necesario
 sin mantener una consistencia con el resto, en algún sentido es como un
 documento que podemos expandir dinámicamente.
 
+## 2023-03-10
+### 267. Que es una agregación? Dar un ejemplo
+### 268. cuánto vale T', si busco A=a
+
+Acá no estoy seguro porque T' es la cantidad de tuplas que valen.. podria ser arbitrariamente grande. Asumo que pregunta sobre la cantidad de bloques que hay que leer para encontrar los T'.
+
+Esto va a depender si hay o no índices y del tipo que estos puedan ser y si los datos estan ordenados. Definamos $B_r$ la cantidad total de tuplas en la relación. 
+
+1. Si no hay un índice y los datos no están ordenados hay que hacer un fullscan lo cual tomaria $T = B_r$. 
+2. Si están ordenados podríamos hacer un binary search en los datos lo cual tomaria un $log(B_r)$. 
+3. Si tenemos un índice B+ clustered 
+
+<TODO(terminar)>
+
+### 269. Que es una base de datos stream?
+### 270. que son los algoritmos supervisados y no supervisados
+### 271. Que es data mesh. Cuáles son sus 4 principios. Explicarlos.
+### 272. Que es Open data? Dar las dos definiciones (aquí la idea era explicar cómo se hizo conocido en América latina y en Europa)
 
 ## 2023-07-20
 

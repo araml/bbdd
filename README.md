@@ -1,6 +1,6 @@
 # Preguntas final de bbdd
 
-Respondidas: 37/284
+Respondidas: 41/284
 
 ## Indice:
 1. Preguntas: 
@@ -422,6 +422,10 @@ Es la extracción de patrones o información interesante (no trivial, implícita
 
 <TODO(2 utilidades)>
 
+### 9. Qué permisos pueden concederse  sobre las tablas?    
+
+A una tabla se le pueden dar permisos de lectura/escritura/borrado/actualización/referencias(FK).
+
 ### 13. Diferencia entre índice clustered y unclustered.
 
 Un índice clustered significa que el índice esta en el mismo orden físico que los archivos a los que se refiere. Mientras que unclustered no.
@@ -614,7 +618,7 @@ inputs. Esto significa que incluso puede ejecutar varias transacciones sin
 necesariamente haber llegado a un punto consistente después de cada una (cosa
 que ACID si lo hacía).
 
-## 193. Definir la fórmula de búsqueda en rango para B+ clustered.
+### 193. Definir la fórmula de búsqueda en rango para B+ clustered.
 
 Recordemos que clustered significa que el índice mantiene el mismo orden que los
 archivos físicos. En este caso buscar cuesta 'X' bloques dónde X es la altura 
@@ -666,22 +670,30 @@ documento que podemos expandir dinámicamente.
 
 ## 2023-07-20
 
-## 273. Qué componente del DBMS se encarga de garantizar aislamiento.
-## 274. En un bd de biblioteca, dar una relacion 1-n y una relacion n-m.
+### 273. Qué componente del DBMS se encarga de garantizar aislamiento.
+### 274. En un bd de biblioteca, dar una relacion 1-n y una relacion n-m.
 
 Se me ocurre que podrían ser libros prestados: (id libro, id persona), un
 ejemplar solo puede ir a una sola persona pero una persona puede sacar varios
 libros. Y para n-m podría ser (id autor, id libro), un autor puede tener muchos 
 libros y a su vez un libro puede tener más de un autor.
 
-## 277. Que es falsa sumarizacion y como lo resuelve la tecnica de multiversion.
+### 276. Que es gobierno de datos y como se relaciona con calidad de datos.
+
+
+
+### 277. Que es falsa sumarizacion y como lo resuelve la tecnica de multiversion.
 
 Falsa sumarización es cuando tenemos una transacción haciendo, literalmente, una
 sumarización de valores pero lee valores en el medio de otra transacción que
 estaba modificando varios de estos, entonces lee a su vez un valor viejo y un
 valor actualizado para hacer la sumarización.
 
-## 279. Qué es el teorema cap y como se vincula con las propiedades ACID.
+### 278. Que es un arbol de clasificacion y ejemplifique.
+
+Es un árbol de decisión que se usa para clasificar. Un árbol de decisión es un árbol (estructura de datos) dónde los nodos representan preguntas sobre los atributos y las hojas son las consecuencias/clases. Se forman recursivamente separando los valores usando sus atributos. 
+
+### 279. Qué es el teorema cap y como se vincula con las propiedades ACID.
 
 El teorema CAP ya fue explicado en la pregutna [#134](#134-qué-es-el-teorema-cap),
 
@@ -693,6 +705,27 @@ garantía más débil ya que al estar en un sistema particionado puede ser que l
 DB esté en un estado inconsistente (aunque no nos debería dejar leer), al cual
 eventualmente pasará a ser uno consistente.
 
+
+### 280. Mencione dos aspectos salientes de las bases de datos orientadas a grafos.
+
+Solo se me ocurre que bueno, estan estructuradas en forma de grafo dónde los nodos representan entidades que pueden tener multiples etiquetas y atributos, por ejemplo un nodo puede tener etiqueta *actor* y *persona* y atributos *nombre* y fecha de *nacimiento*. Las relaciones entre los nodos son los ejes que tienen un tipo y una dirección; además pueden tener un (key, value) para describir más precisamente la relación.
+
+### 281. Qué es data mesh y sus caracteristicas principales.
+
+A diferencia de data warehouse y data lake donde todos los datos estaban centralizados data mesh busca descentralizar los datos alrededor de los dominios de trabajo de la empresa, dejando que cada uno maneje su propios datos como servicio de otros posibles dominios. Logra esto mediante cuatro principios:
+
+1. Que los datos sean propios de cada dominio (Domain driven data ownership architecture).
+2. Trata los datos como un producto (Data as a product).
+3. Cada dominio tiene su propia infra que facilita el acceso a esa información (Self-serve infra as a platform).
+4. Establece un standard de data governance federado mientras que deja que cada dominio elija como acatar los mismos (Federated computational governance).
+
+
+### 282. Qué es big data y sus caracteristicas principales.
+
+
+
+### 283. En que se diferencias los tipos de datos estructurados vs los semi-estructurados.
+### 284. Qué es fragmentacion y que tipos hay.
 
 # Referencias
 

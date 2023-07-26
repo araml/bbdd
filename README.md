@@ -639,6 +639,105 @@ tipadas y además ambos (nodos y relaciones) pueden tener propiedades.
 A diferencia de las otras bbdd noSQL las bases de grafos **si** cumplen las 
 propiedades ACID.
 
+### 2023-02-22
+
+### Diferencia entre clave candidata y primaria?
+
+Para definir esto necesitamos definir superclave, una superclave son un conjunto de atributos que identifican únicamente un elemento de la relación. Las claves candidatas son superclaves pero minimales y una clave primaria es simplemente elegir una de estas claves candidatas y usarla como la clave de la relación.
+
+### Q se puede hacer con un hash index o para que se usa?
+
+El hash index es un índice que sirve mayoritariamente cuando hacemos búsquedas por igualdad. Este se define con una cantidad de buckets a donde vamos a caer al hacer una operación de hash con lo que buscamos y luego iterar los bloques del bucket. Esto hace que en promedio tengamos que leer una cantidad de bloques acotadas por la cantidad de bloques en ese bucket (si están todos bien distribuidos en las entradas de hash). tl;dr sirve para búsquedas con igualdad.
+
+### Cómo se evitan aborts en cascada?
+
+Para evitar aborts en cascadas se usa un scheduler ACA o cascadeless, basicamente este lo que hace es evitar que una transacción lea de un write de otra si la segunda todavía no hizo un commit. Esto evita leer sobre writes que luego pueden ser abortados y en consecuencia tener que revertir también la transacción que leyo, es decir creando una cascada de rollbacks.
+
+### Dos características de las inmemory dbs
+
+
+### Algoritmo de clasificacion, para q se usan, ejemplos
+
+Un algoritmo de clasificación es un algoritmo de data mining que sirve para encontrar distinciones entre los datos y poder hacer futuras predicciones sobre datos nuevos. Estos algoritmos pueden ser supervisados (que se conoce información de los datos) o no supervisados (que el algoritmo intuya o descubra información por motus propio).
+
+Por ejemplo podríamos tener un algoritmo de clasificación sobre transacciones fraudulentas de tarjetas. Al ver datos nuevos nuestro algoritmo debería poder clasificar si una nueva transacción es o no fraudulenta. 
+
+### 1. Primary key vs SK
+
+
+
+### 2. Indice clustered vs unclustered
+
+Si los datos del archivo están ordenados fisicamente en el mismo orden que el índice diremos que ese índice es clustered. Si no pasa esto es unclustered.
+
+### 3. Que significa que una transaccion lee de otra. Explicar Dirty Read.
+### 4. 2 diff entre Column database store y relacionales.
+### 5. OLAP vs OLTP
+
+Estos dos terminos se refieren a on-line analytical processing y on-line transactional processing. El segundo de esto se refiere a las bases de datos y usos de las mismas que se ven en la materia, una DB de un banco por ej, etc. En cambio OLAP se refiere a la creación de reportes o popular bases de datos orientadas a reportes analíticos, esto hace que sean resultados resumidos, por tema, desnormalizados con poca frecuencia de uso y para usos específicos. 
+
+Otra forma de decirlo es que OLAP te ayuda a generar decisiones a partir de un consumo de los datos (creando reportes para las mismas) mientras que OLTP te ayuda solo a manejar transacciones.
+
+### 1. Formas normales, que son y que problemas atacan
+### 2. Índice denso vs no denso
+
+Un índice se dice denso cuando tiene una entrada por cada valor de clave de busqueda. Un no denso es cuando no, esto sirve por ejemplo si tenemos un índice clustered (en orden con los archivos en disco) podemos guardar solo el primer rid que apunte al principio de un bloque nuevo de forma de no usar almacenamiento extra innecesariamente.
+
+### 3. Cómo el control por timestamping evita lost updates
+
+
+
+### 4. Qué optimizaciones pueden hacer las bases paralelas
+
+
+
+### 5. Qué es Open Data
+### 1. Que es una agregación? Dar un ejemplo
+### 2. cuánto vale T', si busco A=a.
+
+### 4. que son los algoritmos supervisados y no supervisados.
+
+Estos son algoritmos de machine learning, la diferencia principal es que en los supervisados uno tiene información previa de los datos, por ejemplo labels en imagenes que se quieren clasificar, transacciones fraudulentas, etc, basicamente hay alguien 'entrenando' con resultados correctos. 
+
+En cambio un no supervisado procesa los datos y descubre los patrones subyacentes por su propia cuenta, por ejemplo en el caso de imagenes puede llegar a generar un clasificador sin que haya labels en la mismas, o puede llegar a dividr las transacciones entre varios tipos, donde uno puede ser el de transacciones fraudulentas por ejemplo, sin que previamente se le haya informado esto.
+
+### 5. Que es data mesh. Cuáles son sus 4 principios. Explicarlos.
+
+Data mesh se podría ver como el paso siguiente a data warehouse / data lake, en un data warehouse se tenia en un lugar centralizado un conjunto de datos estructurados donde se hacia BI, un data lake es parecido solo que la estructura fija de los datos no está ahi, pueden venir de fuentes dispersas y con estructuras distintas.
+
+Data mesh intenta ir un paso más alla, en vez de tener un lugar centralizado (warehouse/lake) propone varios principios donde esa centralización se divide en distintos partes del dominio.
+ 
+Para esto usa 4 principios.
+  
+1. **Data as product** (se tratan los datos como productos)
+2. **Domain driven data architecture** (la arquitectura depende del dominio y no del todo de la empresa)
+2. **Self serving infra as a platform** (se crean infraestructuras adecuadas para el dominio en el que se trabaja)
+3. **Federated computational governance** (se crea un estandar que cada dominio tiene que acatar pero con implementaciones dejadas a su propio criterio)
+
+### 6. Que es Open data? Dar las dos definiciones ( aquí la idea era explicar cómo se hizo conocido en América latina y en Europa)
+
+## 2023-03-02
+
+### 1. ¿Qué es una foreign key?
+### 2. ¿Cómo es el algoritmo del block nested loop join?
+### 3. ¿Cuándo dos historias son equivalentes?
+### 4. Mencione dos aspectos salientes de las bases de datos orientadas a grafos que las diferencien de las bases de datos relacionales  (2)
+### 5. 1 y 2 (eran dos preguntas pero no me acuerdo como vinieron divididas). como se define relacion en el modelo relacional. que diferencia tiene con sql. hay algun caso en el q la diferencia te afecte las queries? (aca era importante el tema de los repetidos, y como eso hace q en la relacion q resulta de hacer una query en ar siempre tenes clave candidata pero en sql no)
+### 3. diferencia entre control de concurrencia por timestamp y multiversion
+### 4. diferencia entre fragmentacion y replicacion, como impacta cada una en las queries
+
+## 2023-05-02
+
+### 1. ¿Qué es una foreign key?
+### 2. ¿Cómo es el algoritmo del block nested loop join?
+### 3. ¿Cuándo dos historias son equivalentes?
+### 4. Mencione dos aspectos salientes de las bases de datos orientadas a grafos que las diferencien de las bases de datos relacionales  (2)
+### 1. pk vs sk
+### 2. cuándo una tx lee de otra y qué es un dirty read
+### 3. clustered vs unclustered index 
+### 5. column store vs relacionales
+### 6. olap vs oltp
+
 ## 02/03/17
 
 ### 233. Bases NO-SQL porque se dicen 'schemaless'? Ejemplificar.

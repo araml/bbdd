@@ -689,6 +689,12 @@ Un índice se dice denso cuando tiene una entrada por cada valor de clave de bus
 
 ### 4. Qué optimizaciones pueden hacer las bases paralelas
 
+En principio dos tipos de optimizaciones:
+
+**Optimizaciones globales:** donde pondera costos de cpu/IO y comunicación para elegir una estrategia cercana a la óptima. Por ejemplo tiene que considerar la cantidad de datos a transmitir.
+
+**Optimizaciones de query locales:** una vez que se ejecuto un plan global las queries locales tienen las mismas optimizaciones posibles que una DB normal.
+
 
 
 ### 5. Qué es Open Data
